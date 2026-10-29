@@ -1,0 +1,24 @@
+h1{
+    font-size:50px;
+    text-align:center;
+    font-family:cursive;
+    color:rgb(3, 3, 120);
+  }
+
+#image1{
+    width: 80px;
+}
+
+html{
+  background:lightblue;
+}
+
+#text {
+  padding: 30px 20px;
+  border-radius: 50px;
+}
+
+#cool button {
+  padding: 20px 30px;
+  border-radius: 10px;
+}

@@ -1,47 +1,20 @@
-<h1>guess the password for a dollar</h1>
-<input id="pass" placeholder="####">
-<button id="trybutton">Try</button>
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <h1>Welcome to my website</h1>
+    <br><br>
+    <button id="cool button">cool button</button>
+    <input id="text" placeholder="Put somethjing in here">
+    <img id="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFqk7ISXAAmNH-a9beL4c1Q6tf580FaL5f_eVCiZk8_QRO1wFAQxQ3Jhm&s=10">
+
+  </head>
+</html>
 
 <script>
-  const safeDistance = 60;
-
-  document.addEventListener('mousemove', (event) => {
-    const rect = trybutton.getBoundingClientRect();
-    const buttonCenterX = rect.left + rect.width / 2;
-    const buttonCenterY = rect.top + rect.height / 2;
-    const deltaX = event.clientX - buttonCenterX;
-    const deltaY = event.clientY - buttonCenterY;
-    const distance = Math.hypot(deltaX, deltaY);
-    if (distance < safeDistance) {
-      const maxX = window.innerWidth - rect.width;
-      const maxY = window.innerHeight - rect.height;
-
-      const randomX = Math.floor(Math.random() * Math.max(0, maxX));
-      const randomY = Math.floor(Math.random() * Math.max(0, maxY));
-
-      trybutton.style.left = randomX + 'px';
-      trybutton.style.top = randomY + 'px';
-    }
-  });
-
+   document.addEventListener('click', (event) => {
+    console.log('wow you clicked')
+   });
 </script>
-
-<style>
-  h1 {  
-    font-family: cursive;
-  }
-
-  #pass {
-    font-family: cursive;
-    font-size: 20px;
-    padding: 10px 20px;
-    text-align: center;
-  }
-
-  #trybutton {
-    padding:10px 20px;
-    position: absolute;
-    transition: left 0.1s ease, top 0.1s ease;
-    font-family: cursive;
-    font-size: 20px;
-</style>
