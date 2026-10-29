@@ -1,0 +1,47 @@
+<h1>guess the password for a dollar</h1>
+<input id="pass" placeholder="####">
+<button id="trybutton">Try</button>
+
+<script>
+  const safeDistance = 60;
+
+  document.addEventListener('mousemove', (event) => {
+    const rect = trybutton.getBoundingClientRect();
+    const buttonCenterX = rect.left + rect.width / 2;
+    const buttonCenterY = rect.top + rect.height / 2;
+    const deltaX = event.clientX - buttonCenterX;
+    const deltaY = event.clientY - buttonCenterY;
+    const distance = Math.hypot(deltaX, deltaY);
+    if (distance < safeDistance) {
+      const maxX = window.innerWidth - rect.width;
+      const maxY = window.innerHeight - rect.height;
+
+      const randomX = Math.floor(Math.random() * Math.max(0, maxX));
+      const randomY = Math.floor(Math.random() * Math.max(0, maxY));
+
+      trybutton.style.left = randomX + 'px';
+      trybutton.style.top = randomY + 'px';
+    }
+  });
+
+</script>
+
+<style>
+  h1 {  
+    font-family: cursive;
+  }
+
+  #pass {
+    font-family: cursive;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  #trybutton {
+    padding:10px 20px;
+    position: absolute;
+    transition: left 0.1s ease, top 0.1s ease;
+    font-family: cursive;
+    font-size: 20px;
+</style>
