@@ -18,11 +18,11 @@
     </h3>
 
     <script>
-    let value = 0;
+    let value = 1;
     let button = document.getElementById('cool button');
    
     button.addEventListener('click', (event) => {
-      value = value + 1;
+      value = value ^ 2;
      button.textContent = value;
     });
   </script>
